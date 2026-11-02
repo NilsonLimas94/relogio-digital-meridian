@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Relógio Digital Meridian</title>
+</head>
+<body>
+    <!-- 
+    Camada de ruído visual.
+    aria-hidden: leitor de tela ignora.
+    É só decoração.
+    -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Main é o cartão do relógio. Tudo do relógio esta aqui dentro -->
+    <main>
+        <header class="top">
+            <div class="brand">
+                <span class="mark">M</span>
+                <span>MERIDIAN / 01</span>
+            </div>
+            <div class="zone">
+                FUSO LOCAL
+                <span aria-hidden="true">.</span>
+                BR
+            </div>
+        </header>
+
+        <!-- 
+        Section com aria-label:
+        Define a região principal para acessibilidade
+        -->
+        <section class="center" aria-label="Relógio digital">
+            <div class="eyebrow">
+                Agora, com calma
+            </div>
+            <div class="time" aria-label="Hora atual">
+                <span id="hours">00</span>
+                <span class="sep" aria-hidden="true">:</span>
+                <span id="minutes">00</span>
+                <span class="sep" aria-hidden="true">:</span>
+                <span id="seconds" class="seconds">00</span>
+            </div>
+            <div class="date" id="date">
+                Carregando data...
+            </div>
+            <div class="rule"></div>
+            <div class="caption">
+                O seu tempo, em um só lugar.
+            </div>
+        </section>
+
+        <footer class="bottom">
+            <div class="live">
+                <span class="dot"></span>
+                <span>TEM TEMPO REAL</span>
+            </div>
+            <button class="motion-toggle" id="motion-toggle" type="button">
+                PAUSAR LUZES
+            </button>
+            <div class="coords">
+                HORÁRIO DE BRASILIA
+            </div>
+        </footer>
+    </main>
+
+    <!-- 
+    Defer: Garante que o HTML carregue antes do JS executar
+    -->
+    <script src="script.js" defer></script>
+</body>
+</html>
