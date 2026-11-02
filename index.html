@@ -17,22 +17,30 @@
     <!-- Main é o cartão do relógio. Tudo do relógio esta aqui dentro -->
     <main>
         <header class="top">
+            <!-- 
+            brand: identidade visual. 
+            Fica à esquerda por convenção 
+            -->
             <div class="brand">
                 <span class="mark">M</span>
                 <span>MERIDIAN / 01</span>
             </div>
+            <!--
+            Zone: informação de contexto. Fica à direita para separar de marca
+            -->
             <div class="zone">
                 FUSO LOCAL
                 <span aria-hidden="true">.</span>
                 BR
             </div>
         </header>
-
         <!-- 
-        Section com aria-label:
-        Define a região principal para acessibilidade
+        Center: região principa. aria-label ajuda leitor de tela a entender que aqui esta relógio
         -->
         <section class="center" aria-label="Relógio digital">
+            <!-- 
+            Eyebrow: texto pequeno acima. Guia visual antes da hora
+            -->
             <div class="eyebrow">
                 Agora, com calma
             </div>
@@ -46,6 +54,9 @@
             <div class="date" id="date">
                 Carregando data...
             </div>
+            <!-- 
+            Rule: linha decorativa. Separa data do texto abaixo
+            -->
             <div class="rule"></div>
             <div class="caption">
                 O seu tempo, em um só lugar.
@@ -53,13 +64,22 @@
         </section>
 
         <footer class="bottom">
+            <!-- 
+            Live: indicador de tempo real. Dot com brilho indica ativo
+            -->
             <div class="live">
                 <span class="dot"></span>
                 <span>TEM TEMPO REAL</span>
             </div>
+            <!-- 
+            motion-toggle: controla orbs. type="button" evita submit acidental
+            -->
             <button class="motion-toggle" id="motion-toggle" type="button">
                 PAUSAR LUZES
             </button>
+            <!-- 
+            Cords: informação extra. Mantém simetria com o header
+            -->
             <div class="coords">
                 HORÁRIO DE BRASILIA
             </div>
@@ -67,7 +87,7 @@
     </main>
 
     <!-- 
-    Defer: Garante que o HTML carregue antes do JS executar
+    Defer: Garante que o HTML carregue antes do JS executar. Evita getElementById nulo.
     -->
     <script src="script.js" defer></script>
 </body>
