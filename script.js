@@ -231,3 +231,23 @@ function updateClock() {
 updateClock();
 // setInterval 1000ms: suficiente para relógio, ão pesa CPU
 setInterval(updateClock, 1000);
+
+/*
+Botão PAUSAR LUZES.
+Por que classe no body: 1 classe pausa 16 luzes de um vez, sem loop no JS
+*/
+const motionToggle = document.getElementById('motion-toggle');
+motionToggle.addEventListener('click', () => {
+    /*
+    toggle retorna true se adicionou a classe, fasle se removeu
+    */
+    const pausado = document.body.classList.toggle('orbs-paused');
+
+    /*
+    aria-pressed: acessibilidade.
+    Leitor de tela fala que o botão está pressionado ou não
+    */
+    motionToggle.setAttribute('aria-pressed', String(pausado))
+
+    motionToggle.textContent = pausado ? 'ATIVAR LUZES' : 'PAUSAR LUZES';
+});
